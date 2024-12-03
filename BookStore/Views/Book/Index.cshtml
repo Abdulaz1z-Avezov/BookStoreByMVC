@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+<h2>Китобҳо</h2>
+<a href="/Book/Create">Китоби нав дабовить кардан</a>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model)
+        {
+           <tr>
+               <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Year</td>
+                <td>
+                    <a href="/Book/Edit/@book.Id">Изменить</a>
+                    <a href="/Book/Delete/@book.Id">Удалить</a>
+                </td>
+           </tr>
+        }
+    </tbody>
+</table>
